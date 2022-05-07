@@ -21,14 +21,25 @@ public class PictureFrame {
     }
 
     public void drawGridLines(Graphics g) {
-      g.setColor(Color.LIGHT_GRAY);
-      for (int are = 0; are <= 7; are++) {
-        g.drawLine(20, 20 + are * 20, 180, 20 + are * 20);
-      }
-      for (int see = 0; see <= 8; see++) {
-        g.drawLine(20 + see * 20, 20, 20 + see * 20, 160);
-      }
-    }
+        g.setColor(Color.LIGHT_GRAY);
+        drawGridLines1(g);
+        drawGridLines2(g);
+        
+        }
+      
+       private void drawGridLines1(Graphics g) {
+      	  for (int are = 0; are < 7; are++) {
+      	        g.drawLine(10, 30 + are * 20, 20, are+1);
+        }
+  		
+  	}
+
+  	private void drawGridLines2(Graphics g) {
+  		 for (int see = 0; see < 8; see++) {
+  		        g.drawLine(30 + see * 20, 10, 20, see+1);
+  	  }	
+  	}
+
 
     public void drawHeadings(Graphics g) {
       for (int are = 0; are < 7; are++) {

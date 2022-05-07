@@ -91,20 +91,24 @@ public class Aardvark {
     }
   }
 
-  int pictureGrid() {
-	    for (int are = 0; are < 7; are++) {
-	      for (int see = 0; see < 8; see++) {
-	        if (grid[are][see] != 9) {
-	          System.out.printf("%d", grid[are][see]);
-	        } else {
-	          System.out.print(".");
-	        }
-	      }
-	      System.out.println();
-	    }
-	    return 11;
-	  }
+  void pictureGridFunction() {
+	  pictureGrid(grid);
+	  pictureGrid(gg);
+  }
 
+  int pictureGrid(int [][] factor) {
+    for (int are = 0; are < 7; are++) {
+      for (int see = 0; see < 8; see++) {
+        if (grid[are][see] != 9) {
+          System.out.printf("%d", grid[are][see]);
+        } else {
+          System.out.print(".");
+        }
+      }
+      System.out.println();
+    }
+    return 11;
+  }
 
   int printGuessGrid() {
     for (int are = 0; are < 7; are++) {
@@ -376,7 +380,7 @@ public class Aardvark {
           collateGrid();
           break;
         }
-        pictureGrid();
+        pictureGrid(gg);
         generateGuesses();
         collateGuessGrid();
         mode = 1;
@@ -418,7 +422,7 @@ public class Aardvark {
 
             break;
           case 1:
-        	  pictureGrid();
+        	  pictureGrid(gg);
             break;
           case 2:
             printGuessGrid();
@@ -733,7 +737,7 @@ public class Aardvark {
 
         }
         mode = 0;
-        pictureGrid();
+        pictureGrid(gg);
         pf.dp.repaint();
         long now = System.currentTimeMillis();
         try {

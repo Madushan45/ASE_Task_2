@@ -228,40 +228,48 @@ public class Aardvark {
   }
 
   private Domino findDominoAt(int x, int y) {
-    for (Domino d : _d) {
-      if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
-        return d;
-      }
-    }
-    return null;
-  }
+	    for (Domino d : _d) {
+	     final boolean a = (d.lx == x && d.ly == y);
+	     final boolean b = (d.hx == x && d.hy == y);
+	     if (a||b){
+	        return d;
+	      }
+	    }
+	    return null;
+	  }
 
-  private Domino findGuessAt(int x, int y) {
-    for (Domino d : _g) {
-      if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
-        return d;
-      }
-    }
-    return null;
-  }
+	  private Domino findGuessAt(int x, int y) {
+	    for (Domino d : _g) {
+	    	final boolean a = (d.lx == x && d.ly == y);
+	        final boolean b = (d.hx == x && d.hy == y);
+	        if (a||b) {
+	        return d;
+	      }
+	    }
+	    return null;
+	  }
 
-  private Domino findGuessByLH(int x, int y) {
-    for (Domino d : _g) {
-      if ((d.low == x && d.high == y) || (d.high == x && d.low == y)) {
-        return d;
-      }
-    }
-    return null;
-  }
+	  private Domino findGuessByLH(int x, int y) {
+	    for (Domino d : _g) {
+	    	final boolean a = (d.low == x && d.high == y);
+	        final boolean b = (d.high == x && d.low == y);
+	        if (a||b) {
+	        return d;
+	      }
+	    }
+	    return null;
+	  }
 
-  private Domino findDominoByLH(int x, int y) {
-    for (Domino d : _d) {
-      if ((d.low == x && d.high == y) || (d.high == x && d.low == y)) {
-        return d;
-      }
-    }
-    return null;
-  }
+	  private Domino findDominoByLH(int x, int y) {
+	    for (Domino d : _d) {
+	    	final boolean a = (d.low == x && d.high == y);
+	        final boolean b = (d.high == x && d.low == y);
+	        if (a||b){
+	        return d;
+	      }
+	    }
+	    return null;
+	  }
 
   private void printDominoes() {
     for (Domino d : _d) {

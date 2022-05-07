@@ -40,7 +40,6 @@ public class PictureFrame {
   	  }	
   	}
 
-
     public void drawHeadings(Graphics g) {
       for (int are = 0; are < 7; are++) {
         fillDigitGivenCentre(g, 10, 30 + are * 20, 20, are+1);
@@ -99,32 +98,29 @@ public class PictureFrame {
     }
 
     protected void paintComponent(Graphics g) {
-      g.setColor(Color.YELLOW);
-      g.fillRect(0, 0, getWidth(), getHeight());
+        g.setColor(Color.YELLOW);
+        g.fillRect(0, 0, getWidth(), getHeight());
 
-      // numbaz(g);
-      //
-      // if (master!=null && master.orig != null) {
-      // drawRoll(g, master.orig);
-      // }
-      // if (reroll != null) {
-      // drawReroll(g, reroll);
-      // }
-      //
-      // drawGrid(g);
-      if (master.mode == 1) {
-        drawGridLines(g);
-        drawHeadings(g);
-        drawGrid(g);
-        master.drawGuesses(g);
+        // numbaz(g);
+        //
+        // if (master!=null && master.orig != null) {
+        // drawRoll(g, master.orig);
+        // }
+        // if (reroll != null) {
+        // drawReroll(g, reroll);
+        // }
+        //
+        // drawGrid(g);
+        if (master.mode == 1) {
+          master.drawGuesses(g);
+        }
+        if (master.mode == 0) {
+          master.drawDominoes(g);
+        }
+          drawGridLines(g);
+          drawHeadings(g);
+          drawGrid(g);
       }
-      if (master.mode == 0) {
-        drawGridLines(g);
-        drawHeadings(g);
-        drawGrid(g);
-        master.drawDominoes(g);
-      }
-    }
 
     public Dimension getPreferredSize() {
       return new Dimension(202, 182);

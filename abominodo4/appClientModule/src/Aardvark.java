@@ -555,9 +555,6 @@ public class Aardvark {
             System.out.printf("%s your score is %d\n", playerName, score);
             break;
           case 6:
-        	  final double domino = 500;
-        	  final double certainties = 2000;
-        	  final double possibilities = 10000;
             System.out.println();
             String h8 = "So you want to cheat, huh?";
             String u8 = h8.replaceAll(".", "=");
